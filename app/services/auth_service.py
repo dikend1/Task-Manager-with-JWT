@@ -17,6 +17,7 @@ def register_user(user_data: schemas.user_schema.UserCreate, db:Session):
     db.refresh(new_user)
     return new_user
 
+
 def login_user(username: str, password: str, db:Session):
     user = db.query(models.User).filter(models.User.username == username).first()
     
